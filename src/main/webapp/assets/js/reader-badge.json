@@ -1,0 +1,15 @@
+{
+  "@context": "https://w3id.org/openbadges/v2",
+  "id": "https://openbagetest.s3.eu-central-1.amazonaws.com/reader-badge.json",
+  "type": "BadgeClass",
+  "name": "Reader",
+  "description": "Reader di Salvatore.",
+  "image": "https://www.smartoop.it/assets/imgs/logo.png",
+  "tags": ["test", "reader"],
+  "criteria": {
+    "type": "Criteria",
+    "url": "https://openbagetest.s3.eu-central-1.amazonaws.com/reader-badge-criteria.html" 
+  },
+  "alignment": [],
+  "issuer": "https://openbagetest.s3.eu-central-1.amazonaws.com/issuer-organization.json"
+}

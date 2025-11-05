@@ -1,0 +1,18 @@
+{
+  "@context": "https://w3id.org/openbadges/v2",
+  "id": "https://openbagetest.s3.eu-central-1.amazonaws.com/assertion-1759216024.json",
+  "type": "Assertion",
+  "recipient": {
+    "type": "email",
+    "hashed": true,
+    "identity": "sha256$8f4589acf1afd96098985d32b78a6c1eae5ef15bb8d2bc32e6c490cd5c7c2dcd",
+    "salt": "k7qVxndjgS7p854W24cSFw"
+  },
+  "issuedOn": "2025-10-16T12:45:55Z",
+  "expires": "2030-10-16T12:45:55Z",
+  "badge": "https://openbagetest.s3.eu-central-1.amazonaws.com/reader-badge.json",
+  "verification": {
+    "type": "hosted",
+    "url": "https://openbagetest.s3.eu-central-1.amazonaws.com/assertion-1759216024.json"
+  }
+}

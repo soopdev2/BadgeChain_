@@ -1,0 +1,7 @@
+{
+  "@context": "https://w3id.org/openbadges/v2",
+  "id": "https://openbagetest.s3.eu-central-1.amazonaws.com/issuer-organization.json",
+  "type": "Issuer",
+  "name": "Salvatore Test",
+  "url": "https://www.smartoop.it/"
+}
