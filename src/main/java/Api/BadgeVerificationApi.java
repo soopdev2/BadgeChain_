@@ -10,6 +10,7 @@ import Entity.Utente;
 import Services.Filter.Secured;
 import static Utility.JpaUtil.salvaInfoTrack;
 import static Utility.JpaUtil.trovaUtenteById;
+import Utility.Utils;
 import static Utility.Utils.calculateSha256Hex;
 import static Utility.Utils.tryParseLong;
 
@@ -114,9 +115,10 @@ public class BadgeVerificationApi {
 
         try {
             // (3) Scarica file assertion.json
+            String sanitizedFileUrl = Utils.sanitizeInputString(fileUrl);
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(fileUrl))
+                    .uri(URI.create(sanitizedFileUrl))
                     .GET()
                     .build();
 
@@ -163,7 +165,7 @@ public class BadgeVerificationApi {
 
             // (7) Crea risultato
             Map<String, Object> result = new HashMap<>();
-            result.put("fileUrl", fileUrl);
+            result.put("fileUrl", sanitizedFileUrl);
             result.put("txHash", txHash);
             result.put("localFileHash", localFileHash);
             result.put("onChainHash", onChainHash);

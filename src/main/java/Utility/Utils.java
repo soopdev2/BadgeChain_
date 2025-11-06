@@ -4,14 +4,15 @@
  */
 package Utility;
 
-import Entity.InfoTrack;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.text.Normalizer;
 import java.time.LocalDateTime;
 import java.util.Base64;
 import java.util.ResourceBundle;
+import org.apache.commons.text.StringEscapeUtils;
 
 /**
  *
@@ -141,4 +142,22 @@ public class Utils {
         return null;
     }
 
+    public static String sanitizeInputString(String input) {
+        if (input == null) {
+            return null;
+        }
+
+        // Normalize unicode
+        String s = Normalizer.normalize(input, Normalizer.Form.NFKC);
+
+        s = s.replaceAll("[\\p{Cntrl}]", "");
+
+        s = s.replaceAll("\\p{C}", "");
+
+        s = s.replaceAll("[<>\"'`{}\\[\\]|\\\\;$]", "");
+
+        s = s.trim().replaceAll("\\s+", " ");
+
+        return s;
+    }
 }
